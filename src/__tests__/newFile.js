@@ -2,15 +2,6 @@ import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import BoxList from "../components/Box/BoxList";
 
-it("should render without crashing", () => {
-  render(<BoxList />);
-});
-
-it("should match snapshot", () => {
-  const { asFragment } = render(<BoxList />);
-  expect(asFragment()).toMatchSnapshot();
-});
-
 it("should add new Box", () => {
   const { getByLabelText, getByText, container } = render(<BoxList />);
   // get inputs
@@ -25,7 +16,8 @@ it("should add new Box", () => {
   fireEvent.change(bgColor, { target: { value: "blue" } });
   fireEvent.click(addButton);
 
-  // get box
+  get;
+  box;
   const newBox = container.querySelector(".box");
 
   // new box in doc

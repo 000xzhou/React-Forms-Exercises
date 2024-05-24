@@ -8,7 +8,7 @@ function Box({ width, height, bgColor, id, deleteBox }) {
 
   return (
     <>
-      <div id={id} style={mystyle}></div>
+      <div id={id} className="box" style={mystyle}></div>
       <button onClick={() => deleteBox(id)}>X</button>
     </>
   );
