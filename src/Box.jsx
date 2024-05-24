@@ -1,9 +1,13 @@
-function Box() {
+function Box({ width, height, bgColor }) {
   // const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>WOW</div>
+      <div>
+        {width}
+        {height}
+        {bgColor}
+      </div>
       <button>X</button>
     </>
   );
