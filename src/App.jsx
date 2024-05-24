@@ -1,7 +1,13 @@
 import BoxList from "./components/Box/BoxList";
+import TodoList from "./components/Todo/TodoList";
 
 function App() {
-  return <BoxList />;
+  return (
+    <>
+      <BoxList />
+      <TodoList />
+    </>
+  );
 }
 
 export default App;

@@ -1,43 +1,33 @@
 // import Box from "./Box.jsx";
 import { useState } from "react";
 
-function NewTodoForm() {
-  const initialState = {
-    width: "",
-    height: "",
-    bgColor: "",
-  };
-
-  const [formData, setFormData] = useState(initialState);
+function NewTodoForm({ addTodo }) {
+  const [todo, setTodo] = useState("");
 
   // handle input change
   const handleChange = (e) => {
-    setFormData((data) => ({
-      ...data,
-      [e.target.name]: e.target.value,
-    }));
+    setTodo(e.target.value);
   };
 
   // when submitted, creates a new Box
   const handleSubmit = (e) => {
     e.preventDefault();
-    createBox({ ...formData });
-    setFormData(initialState);
+    addTodo(todo);
+    setTodo("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="width">Width:</label>
+      <label htmlFor="todoInput">Todo:</label>
       <input
         type="text"
-        id="width"
-        name="width"
-        placeholder="width"
-        value={formData.width}
+        id="todoInput"
+        name="todoInput"
+        placeholder="Eat dinner"
+        value={todo}
         onChange={handleChange}
       />
-
-      <button>Submit</button>
+      <button>Add</button>
     </form>
   );
 }
