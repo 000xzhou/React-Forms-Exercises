@@ -1,13 +1,12 @@
-function Box({ width, height, bgColor }) {
-  // const [count, setCount] = useState(0);
-
+function Box({ width, height, bgColor, id }) {
+  const mystyle = {
+    width: `${width}px`,
+    height: `${height}px`,
+    backgroundColor: bgColor,
+  };
   return (
     <>
-      <div>
-        {width}
-        {height}
-        {bgColor}
-      </div>
+      <div id={id} style={mystyle}></div>
       <button>X</button>
     </>
   );
