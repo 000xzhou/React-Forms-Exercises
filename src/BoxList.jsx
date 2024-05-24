@@ -8,8 +8,13 @@ function BoxList() {
   const [box, setBox] = useState([]);
 
   const createBox = (formData) => {
-    // create box?
+    // create box
     setBox((box) => [...box, { ...formData, id: uuidv4() }]);
+  };
+
+  const deleteBox = (id) => {
+    // delte box
+    setBox((box) => box.filter((b) => b.id !== id));
   };
 
   return (
@@ -23,6 +28,7 @@ function BoxList() {
             bgColor={bgColor}
             key={id}
             id={id}
+            deleteBox={deleteBox}
           />
         ))}
       </div>
