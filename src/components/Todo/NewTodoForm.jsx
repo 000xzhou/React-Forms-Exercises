@@ -1,18 +1,22 @@
 // import Box from "./Box.jsx";
 import { useState } from "react";
 
-function NewTodoForm({ addTodo }) {
-  const [todo, setTodo] = useState("");
+function NewTodoForm({ addTodo, editTodo, existingTodo = "" }) {
+  const [todo, setTodo] = useState(existingTodo.item || "");
 
   // handle input change
   const handleChange = (e) => {
     setTodo(e.target.value);
   };
 
-  // when submitted, creates a new Box
+  // when submitted, creates a new todo or edits it depending on existingTodo
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(todo);
+    if (existingTodo !== "") {
+      editTodo(existingTodo.id, todo);
+    } else {
+      addTodo(todo);
+    }
     setTodo("");
   };
 
@@ -27,7 +31,7 @@ function NewTodoForm({ addTodo }) {
         value={todo}
         onChange={handleChange}
       />
-      <button>Add</button>
+      <button>{existingTodo !== "" ? "Edit" : "Add"}</button>
     </form>
   );
 }
