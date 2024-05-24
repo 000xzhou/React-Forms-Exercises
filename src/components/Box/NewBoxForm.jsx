@@ -1,4 +1,3 @@
-// import Box from "./Box.jsx";
 import { useState } from "react";
 
 function NewBoxForm({ createBox }) {

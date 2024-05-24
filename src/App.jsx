@@ -1,4 +1,4 @@
-import BoxList from "./BoxList.jsx";
+import BoxList from "./components/Box/BoxList";
 
 function App() {
   return <BoxList />;

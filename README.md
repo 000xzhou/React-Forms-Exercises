@@ -1,3 +1,7 @@
+To run this:
+
+    npm start
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -9,4 +13,5 @@ Currently, two official plugins are available:
 
 testing examples from npmjs
 https://www.npmjs.com/package/@testing-library/jest-dom
+
 # React-Forms-Exercises
