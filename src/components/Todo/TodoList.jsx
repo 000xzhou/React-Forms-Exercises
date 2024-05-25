@@ -9,7 +9,10 @@ function TodoList() {
 
   // add todo to todoList state function
   const addTodo = (todo) => {
-    setTodoList((item) => [...item, { id: uuidv4(), item: todo }]);
+    setTodoList((item) => [
+      ...item,
+      { id: uuidv4(), item: todo, completed: false },
+    ]);
   };
 
   // map todoList if if match edit else don't
@@ -25,21 +28,32 @@ function TodoList() {
     setIsEditing((prev) => !prev);
   };
 
+  // completed todo
+  const toggleCompleted = (id) => {
+    setTodoList(
+      todoList.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
   // delete todo item by id to todoList state function
   const deleteTodo = (id) => {
     setTodoList((item) => item.filter((b) => b.id !== id));
   };
 
   // map out todo and send it to todo
-  const todoComponents = todoList.map(({ id, item }) => (
+  const todoComponents = todoList.map(({ id, item, completed }) => (
     <Todo
       key={id}
       id={id}
       item={item}
+      completed={completed}
       deleteTodo={deleteTodo}
       editTodo={editTodo}
       isEditing={isEditing}
       toggleEditForm={toggleEditForm}
+      toggleCompleted={toggleCompleted}
     />
   ));
 
