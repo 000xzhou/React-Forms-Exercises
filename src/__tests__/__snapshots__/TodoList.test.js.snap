@@ -4,12 +4,12 @@ exports[`should match snapshot 1`] = `
 <DocumentFragment>
   <form>
     <label
-      for="todoInput"
+      for="addingTodo"
     >
       Todo:
     </label>
     <input
-      id="todoInput"
+      id="addingTodo"
       name="todoInput"
       placeholder="Eat dinner"
       type="text"

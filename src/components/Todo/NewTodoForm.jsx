@@ -22,10 +22,12 @@ function NewTodoForm({ addTodo, editTodo, existingTodo = "" }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="todoInput">Todo:</label>
+      <label htmlFor={existingTodo !== "" ? "editingTodo" : "addingTodo"}>
+        Todo:
+      </label>
       <input
         type="text"
-        id="todoInput"
+        id={existingTodo !== "" ? "editingTodo" : "addingTodo"}
         name="todoInput"
         placeholder="Eat dinner"
         value={todo}
